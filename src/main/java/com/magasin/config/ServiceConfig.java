@@ -1,6 +1,7 @@
 package com.magasin.config;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 import com.magasin.model.Categorie;
 import com.magasin.model.Client;
@@ -13,7 +14,7 @@ import com.magasin.service.impl.CommandeServiceImpl;
 import com.magasin.service.impl.ProduitServiceImpl;
 
 
-
+@Configuration
 public class ServiceConfig {
 	
 	
