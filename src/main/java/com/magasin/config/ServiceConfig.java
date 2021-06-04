@@ -7,6 +7,7 @@ import com.magasin.model.Categorie;
 import com.magasin.model.Client;
 import com.magasin.model.Commande;
 import com.magasin.model.Produit;
+import com.magasin.service.CommandeService;
 import com.magasin.service.GenericService;
 import com.magasin.service.impl.CategorieServiceImpl;
 import com.magasin.service.impl.ClientServiceImpl;
@@ -51,7 +52,7 @@ public class ServiceConfig {
 	 * @return
 	 */
 	@Bean
-	public GenericService<Commande> CommandeServiceFactory() {
+	public CommandeService CommandeServiceFactory() {
 		return new CommandeServiceImpl();
 		
 	}

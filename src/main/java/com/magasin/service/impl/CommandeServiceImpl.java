@@ -6,12 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.magasin.model.Commande;
 import com.magasin.repositorie.CommandeRepositorie;
+import com.magasin.service.CommandeService;
 import com.magasin.service.GenericService;
 
 
 
 
-public class CommandeServiceImpl implements GenericService<Commande> {
+public class CommandeServiceImpl implements CommandeService {
 
 	
 	
@@ -47,6 +48,10 @@ public class CommandeServiceImpl implements GenericService<Commande> {
 	public void delete(Long id) {
 		this.commandeRepositorie.deleteById(id);;
 		
+	}
+	
+	public Iterable<Commande> findByClientId(Long id) {
+		return this.commandeRepositorie.findByClientId(id);
 	}
 	
 	

@@ -13,7 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.magasin.model.Commande;
-import com.magasin.service.GenericService;
+import com.magasin.service.CommandeService;
+
 
 
 @RestController
@@ -23,7 +24,7 @@ public class CommandeController {
 	
 	
 	@Autowired
-	private GenericService<Commande> genericService;
+	private CommandeService commandeService;
 	
 	
 	
@@ -33,29 +34,35 @@ public class CommandeController {
 	
 	@GetMapping()
 	public List<Commande> getALL() {
-		return genericService.findAll(); 
+		return commandeService.findAll(); 
 	}
 	@GetMapping("{id}")
 	public Commande getbyId(@PathVariable Long id) {
-		return this.genericService.findById(id);
+		return this.commandeService.findById(id);
 		
 	}
+	
+	@GetMapping("clients/{id}")
+	public Iterable<Commande> findByClientId(@PathVariable Long id) {
+		return this.commandeService.findByClientId(id);
+	}
+	
 	
 	@PostMapping()
 	public Commande save(@RequestBody Commande v ) {
 
-		return genericService.save(v) ;
+		return commandeService.save(v) ;
 	}
 	
 	@PatchMapping()
 	public Commande update( @RequestBody Commande v) {
-		return this.genericService.update(v);
+		return this.commandeService.update(v);
 		
 	}
 	
 	@DeleteMapping("{id}")
 	public void delete(@PathVariable Long v) {
-		this.genericService.delete(v);
+		this.commandeService.delete(v);
 		
 	}
 
