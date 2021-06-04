@@ -35,13 +35,11 @@ public class CommandeServiceImpl implements GenericService<Commande> {
 
 	@Override
 	public Commande save(Commande entity) {
-		// TODO Auto-generated method stub
 		return commandeRepositorie .save(entity);
 	}
 
 	@Override
 	public Commande update(Commande entity) {
-		// TODO Auto-generated method stub
 		return commandeRepositorie.save(entity);
 	}
 
