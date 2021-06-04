@@ -34,8 +34,8 @@ public class Commande {
 	private Collection<Produit> produits ;
 	
 	
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "client")
+    @ManyToOne
+    @JoinColumn( name = "client_id")
 	private Client client;
 	
 	

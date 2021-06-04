@@ -27,8 +27,8 @@ public class Produit {
 	@Column(name = "prix")
 	private String prix;
 	
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "categorie")
+    @ManyToOne
+    @JoinColumn( name = "categorie_id")
 	private Categorie categorie;
 
 	
